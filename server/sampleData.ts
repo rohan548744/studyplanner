@@ -9,10 +9,10 @@ export async function populateSampleData() {
   
   if (!existingUser) {
     const user = await storage.createUser({
-      firstName: "Student",
-      lastName: "User",
-      email: "student@example.com",
-      username: "student",
+      firstName: "Tech",
+      lastName: "Avi",
+      email: "techavi@example.com",
+      username: "techavi",
       password: "password",
     });
     userId = user.id;
