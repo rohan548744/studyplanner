@@ -5,11 +5,11 @@ import { getFromStorage, saveToStorage } from "@/lib/localStorage";
 // Default user for demo purposes
 const defaultUser: User = {
   id: 1,
-  username: "john_student",
+  username: "techavi",
   password: "password123", // In a real app, never store passwords like this
-  firstName: "John",
-  lastName: "Student",
-  email: "john@example.com",
+  firstName: "Tech",
+  lastName: "Avi",
+  email: "techavi@example.com",
 };
 
 interface UserContextType {
