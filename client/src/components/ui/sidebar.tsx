@@ -15,6 +15,7 @@ const Sidebar = () => {
     { path: "/pomodoro", label: "Pomodoro Timer", icon: "clock" },
     { path: "/subjects", label: "Subjects", icon: "book" },
     { path: "/progress", label: "Progress", icon: "chart-line" },
+    { path: "/settings", label: "Settings", icon: "cog" },
   ];
 
   const toggleMobileMenu = () => {
@@ -101,10 +102,12 @@ const Sidebar = () => {
               <p className="text-xs text-gray-500">{user.email}</p>
             </div>
           </div>
-          <button className="mt-4 w-full flex items-center justify-center px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200">
-            <FontAwesomeIcon icon="cog" className="mr-2" />
-            Settings
-          </button>
+          <Link href="/settings">
+            <button className="mt-4 w-full flex items-center justify-center px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200">
+              <FontAwesomeIcon icon="cog" className="mr-2" />
+              Settings
+            </button>
+          </Link>
         </div>
       </aside>
     </>

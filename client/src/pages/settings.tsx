@@ -154,7 +154,7 @@ const SettingsPage = () => {
             {!isMobile && (
               <Card className="w-1/4">
                 <CardContent className="pt-6">
-                  <TabsList className="flex flex-col items-start w-full space-y-1" orientation="vertical">
+                  <TabsList className="flex flex-col items-start w-full space-y-1">
                     <TabsTrigger value="profile" className="justify-start w-full">
                       <span className="mr-2">{renderTabIcon("profile")}</span> Profile
                     </TabsTrigger>

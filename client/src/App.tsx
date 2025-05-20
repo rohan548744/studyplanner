@@ -59,7 +59,13 @@ function App() {
       <TooltipProvider>
         <UserProvider>
           <Toaster />
-          <Router />
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route>
+              <Router />
+            </Route>
+          </Switch>
         </UserProvider>
       </TooltipProvider>
     </QueryClientProvider>
