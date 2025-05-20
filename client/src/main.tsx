@@ -8,7 +8,7 @@ import {
   faHome, faTasks, faCalendarAlt, faClock, faBook, faChartLine, 
   faPlus, faPlay, faCheck, faFire, faMapMarkerAlt, faUsers, 
   faArrowRight, faTimes, faEllipsisV, faPause, faRedoAlt, 
-  faCheckCircle, faCog, faBookOpen
+  faCheckCircle, faCog, faBookOpen, faDatabase
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add icons to the library
@@ -16,7 +16,7 @@ library.add(
   faHome, faTasks, faCalendarAlt, faClock, faBook, faChartLine, 
   faPlus, faPlay, faCheck, faFire, faMapMarkerAlt, faUsers, 
   faArrowRight, faTimes, faEllipsisV, faPause, faRedoAlt, 
-  faCheckCircle, faCog, faBookOpen
+  faCheckCircle, faCog, faBookOpen, faDatabase
 );
 
 createRoot(document.getElementById("root")!).render(<App />);

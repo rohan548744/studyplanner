@@ -26,6 +26,7 @@ const Dashboard = () => {
   const [isNewTaskModalOpen, setIsNewTaskModalOpen] = useState(false);
   const [taskPriorityFilter, setTaskPriorityFilter] = useState("all");
   const [editingTask, setEditingTask] = useState(null);
+  const [isLoadingSampleData, setIsLoadingSampleData] = useState(false);
 
   // Get the current data from hooks
   const { 
@@ -111,6 +112,36 @@ const Dashboard = () => {
     startStudySession();
     navigate('/pomodoro');
   };
+  
+  // Handle loading sample data
+  const handleLoadSampleData = async () => {
+    setIsLoadingSampleData(true);
+    try {
+      const response = await apiRequest('/api/sample-data', {
+        method: 'POST'
+      });
+      
+      const result = await response.json();
+      
+      // Show success message
+      toast({
+        title: "Sample Data Added",
+        description: `Added ${result.subjectsCount} subjects, ${result.tasksCount} tasks, and ${result.sessionsCount} study sessions.`,
+      });
+      
+      // Refresh the page to show new data
+      window.location.reload();
+    } catch (error) {
+      console.error("Error loading sample data:", error);
+      toast({
+        title: "Error",
+        description: "Could not load sample data. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoadingSampleData(false);
+    }
+  };
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -138,6 +169,23 @@ const Dashboard = () => {
             <FontAwesomeIcon icon="play" className="mr-2" />
             Start Session
           </Button>
+          
+          {tasks.length === 0 && (
+            <Button
+              variant="outline"
+              onClick={handleLoadSampleData}
+              disabled={isLoadingSampleData}
+            >
+              {isLoadingSampleData ? (
+                <>Loading Sample Data...</>
+              ) : (
+                <>
+                  <FontAwesomeIcon icon="database" className="mr-2" />
+                  Load Sample Data
+                </>
+              )}
+            </Button>
+          )}
         </div>
       </div>
 
