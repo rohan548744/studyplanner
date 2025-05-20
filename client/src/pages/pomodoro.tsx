@@ -148,7 +148,7 @@ const Pomodoro = () => {
                     <SelectValue placeholder="Select a task for this session" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">No specific task</SelectItem>
+                    <SelectItem value="none">No specific task</SelectItem>
                     {availableTasks.map(task => (
                       <SelectItem key={task.id} value={task.id.toString()}>
                         {task.title}
