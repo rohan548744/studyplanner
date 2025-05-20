@@ -149,7 +149,8 @@ const Dashboard = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
         <div>
           <h2 className="text-2xl font-bold text-gray-800">{getCurrentDate()}</h2>
-          <p className="text-gray-600">Welcome back, {user.firstName}!</p>
+          <p className="text-gray-600">Welcome back, {user.firstName} {user.lastName}!</p>
+          <p className="text-xs text-gray-500">@{user.username} · {user.email}</p>
         </div>
         <div className="mt-4 sm:mt-0 flex flex-col sm:flex-row sm:space-x-3 space-y-2 sm:space-y-0">
           <Button 
