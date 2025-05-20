@@ -8,9 +8,24 @@ import {
   insertStudySessionSchema, 
   insertStudyTimeRecordSchema 
 } from "@shared/schema";
+import { populateSampleData } from "./sampleData";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   const httpServer = createServer(app);
+  
+  // Sample data population route
+  app.post("/api/sample-data", async (_req, res) => {
+    try {
+      const result = await populateSampleData();
+      res.status(200).json({
+        message: "Sample data populated successfully",
+        ...result
+      });
+    } catch (error) {
+      console.error("Error populating sample data:", error);
+      res.status(500).json({ message: "Failed to populate sample data" });
+    }
+  });
 
   // User routes
   app.post("/api/users", async (req, res) => {

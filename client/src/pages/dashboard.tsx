@@ -6,6 +6,7 @@ import { useUser } from "@/contexts/user-context";
 import { useTaskState } from "@/hooks/use-tasks";
 import { useScheduleState } from "@/hooks/use-schedule";
 import { useStatsState } from "@/hooks/use-stats";
+import { apiRequest } from "@/lib/queryClient";
 
 import StatCard from "@/components/ui/stat-card";
 import ScheduleItem from "@/components/ui/schedule-item";
